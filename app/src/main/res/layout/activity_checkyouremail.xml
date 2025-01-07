@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFD230">
+
+    <!-- Circle with Back Arrow -->
+    <RelativeLayout
+        android:id="@+id/circle_back"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="32dp"
+        android:background="#FFFFFF">
+
+        <ImageView
+            android:id="@+id/back_arrow"
+            android:layout_width="38dp"
+            android:layout_height="31dp"
+            android:cornerRadius="50dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_back_arrow"
+            app:tint="#000000" />
+    </RelativeLayout>
+
+    <!-- Title Text: Check Your Email -->
+    <TextView
+        android:id="@+id/check_email_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="90dp"
+        android:text="Check Your Email"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#000000" />
+
+    <!-- Instruction Text -->
+
+    <!-- Input Boxes -->
+
+    <!-- Verify Code Button -->
+
+    <!-- "Haven't got the email?" Text -->
+
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/check_email_title"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="19dp"
+        android:text="We sent a link to contact@gmail.com.\nEnter the 5-digit code from the email."
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/instructions"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="35dp"
+        android:orientation="horizontal">
+
+        <!-- Box 1 -->
+        <View
+            android:layout_width="45dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="10dp"
+            android:background="#FFFFE4"
+            android:backgroundTint="@drawable/rounded_corner" />
+
+        <!-- Box 2 -->
+        <View
+            android:layout_width="45dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="10dp"
+            android:background="#FFFFE4"
+            android:backgroundTint="@drawable/rounded_corner" />
+
+        <!-- Box 3 -->
+
+        <!-- Box 4 -->
+        <View
+            android:layout_width="45dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="10dp"
+            android:background="#FFFFE4"
+            android:backgroundTint="@drawable/rounded_corner" />
+
+        <View
+            android:layout_width="45dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="10dp"
+            android:background="#FFFFE4"
+            android:backgroundTint="@drawable/rounded_corner" />
+
+        <!-- Box 5 -->
+        <View
+            android:layout_width="45dp"
+            android:layout_height="43dp"
+            android:background="#FFFFE4"
+            android:backgroundTint="@drawable/rounded_corner" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/verify_button"
+        android:layout_width="331dp"
+        android:layout_height="61dp"
+        android:layout_below="@id/instructions"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="104dp"
+        android:background="#FFF4A5"
+        android:cornerRadius="50dp"
+        android:text="Verify Code"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/resend_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/verify_button"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="29dp"
+        android:text="Haven't got the email? Resend email."
+        android:textColor="#000000"
+        android:textSize="16sp" />
+</RelativeLayout>
