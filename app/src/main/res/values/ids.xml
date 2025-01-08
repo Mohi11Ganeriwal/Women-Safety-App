@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="your_button" type="id" />
-    <item name="circle_top_left" type="id">selector</item>
+    <item name="circle_top_left" type="id"/>
 </resources>

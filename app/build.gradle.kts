@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.expo"
-        minSdk = 34
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -40,4 +40,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    implementation("com.google.android.material:material:1.13.0-alpha09")
+
 }
