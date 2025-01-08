@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#FFD230">
 
-    <!-- Username Box -->
     <EditText
         android:id="@+id/usernameBox"
         android:layout_width="328dp"
@@ -33,9 +32,6 @@
         android:textSize="16sp" />
 
 
-    <!-- Password Box -->
-
-
     <EditText
         android:id="@+id/passwordBox"
         android:layout_width="328dp"
@@ -44,12 +40,14 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="65dp"
         android:layout_marginEnd="33dp"
-        android:background="@drawable/rounded_box_18dp"
+        android:background="@drawable/rounded_box_39dp"
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
+
+
 
     <EditText
         android:id="@+id/ConfirmpasswordBox"
@@ -57,18 +55,14 @@
         android:layout_height="50dp"
         android:layout_below="@id/usernameBox"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="122dp"
         android:layout_marginEnd="33dp"
-        android:background="@drawable/rounded_box_18dp"
+        android:background="@drawable/rounded_box_39dp"
         android:hint="ConfirmPassword"
         android:inputType="textPassword"
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
-
-
-
-    <!-- Login Button -->
 
     <TextView
         android:id="@+id/login"
@@ -103,21 +97,13 @@
         android:layout_below="@id/passwordBox"
         android:layout_marginTop="85dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/rounded_box_8dp"
+        android:background="@drawable/rounded_box_39dp"
         android:text="Sign Up"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
-    <!-- OR Text -->
 
-
-    <!-- Login with Google Button -->
-
-
-    <!-- Tabs -->
-
-    <!-- Tabs -->
-    <Button
+    <TextView
         android:id="@+id/signupTab"
         android:layout_width="332dp"
         android:layout_height="68dp"
@@ -142,8 +128,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginEnd="172dp"
-        android:layout_marginBottom="501dp"
+        android:layout_marginEnd="171dp"
+        android:layout_marginBottom="503dp"
         android:layout_weight="1"
         android:background="@drawable/active_tab_background"
         android:backgroundTint="#FFD230"

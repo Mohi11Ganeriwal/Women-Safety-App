@@ -1,5 +1,4 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFD230">
@@ -7,8 +6,8 @@
     <!-- Circle at top-left -->
     <View
         android:id="@+id/circle_top_left"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
+        android:layout_width="78dp"
+        android:layout_height="79dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="29dp"
         android:background="@drawable/circle_white" />
@@ -25,8 +24,8 @@
     <!-- Large yellow circle on top-left -->
     <View
         android:id="@+id/large_circle_back"
-        android:layout_width="157dp"
-        android:layout_height="151dp"
+        android:layout_width="147dp"
+        android:layout_height="152dp"
         android:layout_marginLeft="-40dp"
         android:layout_marginTop="-40dp"
         android:background="@drawable/circle_large_yellow" />
@@ -34,13 +33,12 @@
     <!-- Large light yellow circle on top-left -->
     <View
         android:id="@+id/large_circle_front"
-        android:layout_width="163dp"
+        android:layout_width="156dp"
         android:layout_height="164dp"
         android:layout_marginLeft="-38dp"
         android:layout_marginTop="-47dp"
         android:background="@drawable/circle_large_light_yellow" />
 
-    <!-- Title Text -->
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
@@ -48,9 +46,9 @@
         android:layout_marginLeft="172dp"
         android:layout_marginTop="48dp"
         android:text="Friends"
+        android:textColor="#000000"
         android:textSize="40sp"
-        android:textStyle="bold"
-        android:textColor="#000000" />
+        android:textStyle="bold" />
 
     <!-- Mobile Number Label -->
     <TextView
@@ -60,16 +58,16 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="175dp"
         android:text="Mobile number"
-        android:textSize="24sp"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="24sp" />
 
     <!-- Enter Number Box -->
     <RelativeLayout
         android:id="@+id/enter_number_box"
-        android:layout_width="328dp"
-        android:layout_height="81dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="205dp"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="220dp"
         android:background="@drawable/box_background"
         android:padding="16dp">
 
@@ -78,8 +76,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enter number"
-            android:textSize="24sp"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="24sp" />
     </RelativeLayout>
 
     <!-- Add Friends Button -->
@@ -87,7 +85,7 @@
         android:id="@+id/add_friends_button"
         android:layout_width="342dp"
         android:layout_height="65dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="316dp"
         android:background="@drawable/button_background">
 
@@ -97,25 +95,17 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="Add friends"
-            android:textSize="24sp"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="24sp" />
     </RelativeLayout>
 
-    <!-- Large light yellow circle at bottom-right -->
     <View
         android:id="@+id/bottom_right_circle_light_yellow"
-        android:layout_width="231dp"
-        android:layout_height="238dp"
-        android:layout_marginLeft="222dp"
-        android:layout_marginTop="580dp"
+        android:layout_width="142dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="620dp"
+        android:layout_marginBottom="-100dp"
         android:background="@drawable/circle_large_light_yellow" />
-
-    <!-- Large yellow circle at bottom-right -->
-    <View
-        android:id="@+id/bottom_right_circle_yellow"
-        android:layout_width="217dp"
-        android:layout_height="213dp"
-        android:layout_marginLeft="230dp"
-        android:layout_marginTop="583dp"
-        android:background="@drawable/circle_large_yellow" />
 </RelativeLayout>

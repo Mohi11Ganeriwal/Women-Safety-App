@@ -1,4 +1,9 @@
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--    <solid android:color="#FFE99C" />-->
+<!--    <corners android:radius="100dp" />-->
+<!--</shape>-->
+
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#FFE99C" />
-    <corners android:radius="100dp" />
+    <solid android:color="#FFE99C"/> <!-- Change to your light yellow color -->
+    <corners android:radius="100dp" android:bottomRightRadius="100dp" android:topLeftRadius="100dp" android:topRightRadius="100dp"/>
 </shape>

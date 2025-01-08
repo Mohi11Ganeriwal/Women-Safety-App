@@ -8,12 +8,11 @@
 
     <!-- Circle with Back Arrow -->
     <RelativeLayout
-        android:id="@+id/circle_back"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_marginStart="19dp"
         android:layout_marginTop="32dp"
-        android:background="#FFFFFF">
+        android:background="@drawable/circle_white">
 
         <ImageView
             android:id="@+id/back_arrow"
@@ -112,8 +111,7 @@
         android:layout_below="@id/instructions"
         android:layout_marginStart="40dp"
         android:layout_marginTop="104dp"
-        android:background="#FFF4A5"
-        android:cornerRadius="50dp"
+        android:background="@drawable/rounded_button"
         android:text="Verify Code"
         android:textColor="#000000"
         android:textSize="24sp"

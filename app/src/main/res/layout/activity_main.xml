@@ -5,13 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#FFD230">
 
-    <!-- Username Box -->
     <EditText
         android:id="@+id/usernameBox"
         android:layout_width="328dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="26dp"
         android:layout_marginTop="267dp"
         android:background="@drawable/rounded_box_39dp"
         android:hint="@string/username"
@@ -20,22 +19,6 @@
         android:textSize="16sp" />
 
     <EditText
-        android:id="@+id/EmailBox"
-        android:layout_width="328dp"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="267dp"
-        android:background="@drawable/rounded_box_39dp"
-        android:hint="Username"
-        android:padding="10dp"
-        android:textColor="#000000"
-        android:textSize="16sp" />
-
-    <!-- Password Box -->
-
-    <!-- Forgot Password -->
-    <EditText
         android:id="@+id/passwordBox"
         android:layout_width="328dp"
         android:layout_height="50dp"
@@ -43,7 +26,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="33dp"
-        android:background="@drawable/rounded_box_18dp"
+        android:background="@drawable/rounded_box_39dp"
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="10dp"
@@ -63,7 +46,6 @@
         android:textColor="@android:color/black"
         android:textSize="20sp" />
 
-    <!-- Login Button -->
 
     <TextView
         android:id="@+id/login"
@@ -98,44 +80,39 @@
         android:layout_below="@id/forgotPassword"
         android:layout_marginTop="43dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/rounded_box_8dp"
+        android:background="@drawable/rounded_box_39dp"
         android:text="Log In"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 
-    <!-- OR Text -->
     <TextView
         android:id="@+id/orText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/loginButton"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="199dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="19dp"
         android:text="or"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
-    <!-- Login with Google Button -->
     <Button
         android:id="@+id/googleLoginButton"
         android:layout_width="244dp"
         android:layout_height="48dp"
         android:layout_below="@id/orText"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="83dp"
-        android:background="@drawable/rounded_box_8dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="74dp"
+        android:background="@drawable/rounded_box_39dp"
         android:drawableStart="@drawable/ic_google"
         android:drawablePadding="10dp"
         android:text="Login with Google"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 
-    <!-- Tabs -->
-
-    <!-- Tabs -->
-    <Button
+    <TextView
         android:id="@+id/signupTab"
         android:layout_width="332dp"
         android:layout_height="68dp"
@@ -144,7 +121,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="161dp"
         android:layout_marginEnd="23dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:background="@drawable/inactive_tab_background"
         android:backgroundTint="#FFFFE4"
         android:textAlignment="textStart"
@@ -160,8 +137,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="498dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="544dp"
         android:layout_weight="1"
         android:background="@drawable/active_tab_background"
         android:backgroundTint="#FFD230"
