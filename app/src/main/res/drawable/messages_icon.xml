@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Outer bubble shape -->
+    <path
+        android:fillColor="#FFFFE4"
+        android:pathData="M24,4C13.06,4 4,12.06 4,22c0,7.68 5.4,14.46 13.16,16.9v5.1c0,0.55 0.45,1 1,1 0.2,0 0.39,-0.06 0.56,-0.17L24.5,40.5C25.66,40.77 26.81,41 28,41c10.94,0 20,-8.06 20,-18S34.94,4 24,4z" />
+
+    <!-- Lightning bolt style -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M18,22l6,-6 -8,5h10l-6,6 8,-5H18z" />
+</vector>

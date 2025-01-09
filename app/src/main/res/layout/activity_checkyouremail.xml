@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="#FFD230">
 
-    <!-- Circle with Back Arrow -->
     <RelativeLayout
         android:layout_width="36dp"
         android:layout_height="36dp"
@@ -23,7 +22,6 @@
             app:tint="#000000" />
     </RelativeLayout>
 
-    <!-- Title Text: Check Your Email -->
     <TextView
         android:id="@+id/check_email_title"
         android:layout_width="wrap_content"
@@ -35,13 +33,7 @@
         android:textStyle="bold"
         android:textColor="#000000" />
 
-    <!-- Instruction Text -->
-
-    <!-- Input Boxes -->
-
-    <!-- Verify Code Button -->
-
-    <!-- "Haven't got the email?" Text -->
+   
 
     <TextView
         android:id="@+id/instructions"
@@ -94,8 +86,6 @@
             android:layout_marginEnd="10dp"
             android:background="#FFFFE4"
             android:backgroundTint="@drawable/rounded_corner" />
-
-        <!-- Box 5 -->
         <View
             android:layout_width="45dp"
             android:layout_height="43dp"
