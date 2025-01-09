@@ -1,0 +1,304 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFD230"
+    android:orientation="vertical">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="14dp">
+
+        <ImageView
+            android:id="@+id/menu_bar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/ic_menu_bar" />
+
+        <ImageView
+            android:id="@+id/profile_icon"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="68dp"
+            android:src="@drawable/ic_girl_icon" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/add_friend_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:paddingStart="20dp"
+        android:text="Add Friend"
+        android:textColor="#000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/add_friend_button"
+        android:layout_width="144dp"
+        android:layout_height="48dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/active_tab_background"
+        android:text="Add Friend"
+        android:textColor="#000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/add_friend_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-27dp"
+        android:paddingStart="18dp"
+        android:text="Add a friend to use SOS and "
+        android:textSize="15sp"
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/track_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:paddingStart="18dp"
+        android:text="Track Me"
+        android:textSize="15sp"
+        android:textColor="#000" />
+
+    <!-- Separator Line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#FFFFFF"
+        android:layout_marginTop="10dp" />
+
+
+    <!-- Action Icons -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Helpline -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginStart="1dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/helpline_icon"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_gravity="left|start"
+                android:layout_marginTop="3dp"
+                android:backgroundTint="#FFD230"
+                android:background="@drawable/circle_back"
+                android:src="@drawable/baseline_library_books_24" />
+
+            <TextView
+                android:id="@+id/helpline_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Helpline"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+
+            <ImageView
+                android:id="@+id/messages_icon"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_gravity="left|start"
+                android:layout_marginTop="-68dp"
+                android:layout_marginStart="300dp"
+                android:backgroundTint="#FFD230"
+                android:background="@drawable/circle_back"
+                android:src="@drawable/messages_icon" />
+
+            <TextView
+                android:id="@+id/messages_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="285dp"
+                android:text="Messages"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/record_icon"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_gravity="left|start"
+                android:layout_marginTop="-75dp"
+                android:layout_marginStart="200dp"
+                android:backgroundTint="#FFD230"
+                android:background="@drawable/circle_back"
+                android:src="@drawable/ic_record" />
+
+            <TextView
+                android:id="@+id/record_text"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="200dp"
+                android:text="Record"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/trackme_icon"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_gravity="left|start"
+                android:layout_marginTop="-80dp"
+                android:layout_marginStart="100dp"
+                android:backgroundTint="#FFD230"
+                android:background="@drawable/circle_back"
+                android:src="@drawable/baseline_add_location_24" />
+
+            <TextView
+                android:id="@+id/trackme_text"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="92dp"
+                android:layout_marginTop="5dp"
+                android:text="Track Me"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+
+        <!-- Add other icons similar to this -->
+    </LinearLayout>
+
+    <!-- Map -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Current Location"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="14dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="5dp"
+        android:background="#FF7777"
+        android:layout_marginHorizontal="10dp"
+        android:clipToPadding="true"
+        android:elevation="4dp">
+
+        <Button
+            android:id="@+id/view_map_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Map"
+            android:textSize="16sp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="10dp"
+            android:backgroundTint="#FFD230"
+            android:background="@drawable/rounded_box_18dp"
+            android:textColor="#000" />
+    </FrameLayout>
+
+    <!-- Bottom Actions -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#FFFFFF"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:padding="16dp">
+
+        <!-- Railway -->
+        <LinearLayout
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/railway_icon"
+                android:layout_width="60dp"
+                android:layout_height="62dp"
+                android:backgroundTint="#FFD230"
+                android:layout_gravity="start|left"
+                android:layout_marginTop="-7dp"
+                android:layout_marginStart="45dp"
+                android:scr="@drawable/circle_back"
+                android:src="@drawable/ic_railway" />
+            <TextView
+                android:id="@+id/railway_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:layout_marginStart="48dp"
+                android:layout_gravity="left|start"
+                android:text="Railway"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/sos_button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:backgroundTint="#FF0000"
+                android:layout_marginTop="-64dp"
+                android:Radius="50dp"
+                android:background="@drawable/circle_white"
+                android:shadowRadius="@android:integer/status_bar_notification_info_maxnum"
+                android:text="SOS"
+                android:textColor="#FFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/cabbooking_icon"
+                android:layout_width="70dp"
+                android:layout_height="72dp"
+                android:layout_gravity="start|left"
+                android:layout_marginStart="265dp"
+                android:layout_marginTop="-80dp"
+                android:background="drawable/circle_back"
+                android:backgroundTint="#FFD230"
+                android:src="@drawable/ic_cab" />
+
+            <TextView
+                android:id="@+id/cabbooking_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-12dp"
+                android:layout_marginStart="258dp"
+                android:layout_gravity="left|start"
+                android:text="Cab Booking"
+                android:textColor="#000"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- SOS Button -->
+    </LinearLayout>
+</LinearLayout>

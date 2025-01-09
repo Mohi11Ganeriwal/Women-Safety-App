@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Expo">
         <activity
+            android:name=".frontpage"
+            android:exported="false" />
+        <activity
             android:name=".friends"
             android:exported="false" />
         <activity

@@ -2,4 +2,24 @@
 <resources>
     <item name="your_button" type="id" />
     <item name="circle_top_left" type="id"/>
+    <item name="menu_bar" type="id" />
+    <item name="profile_icon" type="id" />
+    <item name="add_friend_text" type="id" />
+    <item name="add_friend_button" type="id" />
+    <item name="add_friend_info" type="id" />
+    <item name="track_info" type="id" />
+    <item name="helpline_icon" type="id" />
+    <item name="helpline_text" type="id" />
+    <item name="messages_icon" type="id" />
+    <item name="messages_text" type="id" />
+    <item name="cabbooking_text" type="id" />
+    <item name="cabbooking_icon" type="id" />
+    <item name="sos_button" type="id" />
+    <item name="railway_text" type="id" />
+    <item name="railway_icon" type="id" />
+    <item name="view_map_button" type="id" />
+    <item name="trackme_text" type="id" />
+    <item name="trackme_icon" type="id" />
+    <item name="record_text" type="id" />
+    <item name="record_icon" type="id" />
 </resources>
