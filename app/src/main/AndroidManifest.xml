@@ -12,6 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Expo">
         <activity
+            android:name=".Trackme"
+            android:exported="false" />
+        <activity
+            android:name=".Sidepage"
+            android:exported="false" />
+        <activity
+            android:name=".SidepageActivity"
+            android:exported="false"
+            android:label="@string/title_activity_sidepage"
+            android:theme="@style/Theme.Expo.NoActionBar" />
+        <activity
+            android:name=".sidepage"
+            android:exported="false"
+            android:label="@string/title_activity_sidepage"
+            android:theme="@style/Theme.Expo.NoActionBar" />
+        <activity
             android:name=".frontpage"
             android:exported="false" />
         <activity
