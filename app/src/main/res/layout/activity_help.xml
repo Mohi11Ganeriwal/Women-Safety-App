@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFD230">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <View
+            android:id="@+id/left_circle"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/circle_white" />
+
+
+        <ImageView
+            android:id="@+id/arrow_icon"
+            android:layout_width="38dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/arrow_icon" />
+        <TextView
+            android:id="@+id/help_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="81dp"
+            android:layout_marginLeft="22dp"
+            android:text="Help"
+            android:textSize="36sp"
+            android:textColor="#000000"
+            android:fontFamily="sans-serif-medium" />
+
+        <LinearLayout
+            android:id="@+id/faq_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/help_text"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="#FFD230">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="How to sign up and register?"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif" />
+
+                <ImageView
+                    android:id="@+id/drag_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/drag"
+                    android:contentDescription="Drag to expand answer"
+                    android:layout_marginLeft="8dp" />
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="5dp"
+                android:background="#000000" />
+            <TextView
+                android:id="@+id/answer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="The app will help you get started. When you open it for the first time, you’ll see a button to sign up. Once you’ve filled out the required information, you’ll be able to create an account on the app."
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="#FFD230">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="What is our app?"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif" />
+
+                <ImageView
+                    android:id="@+id/drag1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/drag"
+                    android:contentDescription="Drag to expand answer"
+                    android:layout_marginLeft="8dp" />
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="5dp"
+                android:background="#000000" />
+            <TextView
+                android:id="@+id/answer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="Our app is a mobile application designed to provide safety and security features for women, especially in situations where they may feel vulnerable or threatened. Our app aim is to empower women with technology and resources to protect themselves and seek help when needed."
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="#FFD230">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="What are the features of this app?"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif" />
+
+                <ImageView
+                    android:id="@+id/drag2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/drag"
+                    android:contentDescription="Drag to expand answer"
+                    android:layout_marginLeft="8dp" />
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="5dp"
+                android:background="#000000" />
+
+            <TextView
+                android:id="@+id/answer4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="Tracking :This feature can be used by the user to share their location in the case that they are traveling alone and feel unsafe. A user can send as many tracking requests as they want to their friends and family.                                                                                                                                                                                                                                    Helpline :This feature will help you to contact helpline numbers directly, depending on the situation you're in.                                                                               Cab Booking :The cab booking feature will help you book cabs for your desired location. The details of the cab driver, including their license plate number, will be shared directly with your emergency contacts.                                   Railway :This feature will help you see your train's location and the next station after you enter your PNR number and train number."
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:visibility="gone" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="#FFD230">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="What details are necessary to create the profile?"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif" />
+
+                <ImageView
+                    android:id="@+id/drag3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/drag"
+                    android:contentDescription="Drag to expand answer"
+                    android:layout_marginLeft="8dp" />
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="5dp"
+                android:background="#000000" />
+            <TextView
+                android:id="@+id/answer5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="Once the registration is complete, enter your name, and mobile number, and email id, and age, and upload your profile picture."
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="#FFD230">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Is it necessary to add profile picture?"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif" />
+
+
+                <ImageView
+                    android:id="@+id/drag4"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/drag"
+                    android:contentDescription="Drag to expand answer"
+                    android:layout_marginLeft="8dp" />
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="5dp"
+                android:background="#000000" />
+            <TextView
+                android:id="@+id/answer6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="Adding a profile picture is completely the user's choice of interest. We have also provided avatars which the users can choose for a profile picture."
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="#FFD230">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="How can I add friends?"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif" />
+
+                <ImageView
+                    android:id="@+id/drag6"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/drag"
+                    android:contentDescription="Drag to expand answer"
+                    android:layout_marginLeft="8dp" />
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="5dp"
+                android:background="#000000" />
+            <TextView
+                android:id="@+id/answer8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="As soon as you onboard into the app the app will ask you to add friends to the app on the main screen. If you want to add friends later to the app you can follow these steps are click on add friends,enter the number, then click on add, your friend list will show new additions only after your friends have accepted your friend requests."
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:visibility="gone" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="#FFD230">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="What is SOS?"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif" />
+
+                <ImageView
+                    android:id="@+id/drag7"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/drag"
+                    android:contentDescription="Drag to expand answer"
+                    android:layout_marginLeft="8dp" />
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="5dp"
+                android:background="#000000" />
+            <TextView
+                android:id="@+id/answer7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="The SOS feature immediately sends a notification to your emergency contacts and alerts them that you are in danger. This allows your emergency contacts to take the necessary action, such as contacting the local authorities, calling you, or traveling to your location."
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="#FFD230">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Who receive my SOS alert?"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif" />
+
+                <ImageView
+                    android:id="@+id/drag8"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/drag"
+                    android:contentDescription="Drag to expand answer"
+                    android:layout_marginLeft="8dp" />
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="5dp"
+                android:background="#000000" />
+            <TextView
+                android:id="@+id/answer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="The contacts who you have added as friends will receive alerts if you find yourself in a difficult situation."
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:visibility="gone" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="#FFD230">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="What is cab booking feature?"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif" />
+
+                <ImageView
+                    android:id="@+id/drag9"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/drag"
+                    android:contentDescription="Drag to expand answer"
+                    android:layout_marginLeft="8dp" />
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="5dp"
+                android:background="#000000" />
+            <TextView
+                android:id="@+id/answer9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="The cab booking feature will help you book cabs for your desired location. The details of the cab driver, including their license plate number, will be shared directly with your emergency contacts."
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
