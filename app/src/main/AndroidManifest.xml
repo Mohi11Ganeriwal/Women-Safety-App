@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Expo">
         <activity
+            android:name=".slidepage"
+            android:exported="false"
+            android:label="@string/title_activity_slidepage"
+            android:theme="@style/Theme.Expo.NoActionBar" />
+        <activity
             android:name=".Trackme"
             android:exported="false" />
         <activity

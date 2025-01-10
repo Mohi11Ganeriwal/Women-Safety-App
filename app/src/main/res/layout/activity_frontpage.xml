@@ -182,10 +182,8 @@
 
         </LinearLayout>
 
-        <!-- Add other icons similar to this -->
     </LinearLayout>
 
-    <!-- Map -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -248,7 +246,6 @@
                 android:layout_gravity="start|left"
                 android:layout_marginTop="-7dp"
                 android:layout_marginStart="45dp"
-                android:scr="@drawable/circle_back"
                 android:src="@drawable/ic_railway" />
             <TextView
                 android:id="@+id/railway_text"
@@ -268,8 +265,7 @@
                 android:layout_gravity="center"
                 android:backgroundTint="#FF0000"
                 android:layout_marginTop="-64dp"
-                android:Radius="50dp"
-                android:background="@drawable/circle_white"
+                android:background="@drawable/rounded_button"
                 android:shadowRadius="@android:integer/status_bar_notification_info_maxnum"
                 android:text="SOS"
                 android:textColor="#FFF"
@@ -299,6 +295,5 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <!-- SOS Button -->
     </LinearLayout>
 </LinearLayout>
