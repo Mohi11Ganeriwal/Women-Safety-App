@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -49,5 +50,6 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 
     implementation("com.google.android.material:material:1.13.0-alpha09")
+    implementation("io.appwrite:sdk-for-android:6.0.0")
 
 }

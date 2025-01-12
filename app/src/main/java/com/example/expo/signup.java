@@ -1,7 +1,11 @@
 package com.example.expo;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,82 +13,140 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.expo.appwrite.Appwrite;
+import com.example.expo.appwrite.AppwriteResponse;
+import com.example.expo.util.SharedPrefsUtil;
+
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import io.appwrite.models.User;
+
 public class signup extends AppCompatActivity {
 
     private EditText usernameBox, emailBox, passwordBox, confirmPasswordBox;
-    private TextView loginTextView, signupTextView;
-    private Button loginButton, signupTab, loginTab;
 
-    @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        // Initialize views
+        setContentView(R.layout.activity_signup);
+        Appwrite appwrite = Appwrite.getInstance(this);
+        // Initialize UI components
         usernameBox = findViewById(R.id.usernameBox);
         emailBox = findViewById(R.id.EmailBox);
         passwordBox = findViewById(R.id.passwordBox);
         confirmPasswordBox = findViewById(R.id.ConfirmpasswordBox);
-        loginTextView = findViewById(R.id.login);
-        signupTextView = findViewById(R.id.signup);
-        loginButton = findViewById(R.id.loginButton);
-        signupTab = findViewById(R.id.signupTab);
-        loginTab = findViewById(R.id.loginTab);
 
-        // Set up login button click listener
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String username = usernameBox.getText().toString().trim();
-                String email = emailBox.getText().toString().trim();
-                String password = passwordBox.getText().toString().trim();
-                String confirmPassword = confirmPasswordBox.getText().toString().trim();
+        if (SharedPrefsUtil.isLoggedIn(this)) {
 
-                if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-                    Toast.makeText(signup.this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
-                } else if (!password.equals(confirmPassword)) {
-                    Toast.makeText(signup.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(signup.this, "Sign Up Successful", Toast.LENGTH_SHORT).show();
-                    // Add your logic here for sign up
+            Runnable networkTask = () -> {
+                AppwriteResponse<User<Map<String, Object>>> response = appwrite.auth.getUser();
+                if (response instanceof AppwriteResponse.Success) {
+                    Log.d("Expo_Logs", "Account get successful");
+                    goToHomePage();
+                } else if (response instanceof AppwriteResponse.Error) {
+                    AppwriteResponse.Error<User<Map<String, Object>>> errorResponse = (AppwriteResponse.Error<User<Map<String, Object>>>) response;
+                    Log.d("Expo_Logs", errorResponse.getCode() + " : " + errorResponse.getMessage());
                 }
+            };
+            ExecutorService executorService = Executors.newSingleThreadExecutor();
+            executorService.submit(networkTask);
+            executorService.shutdown();
+        }
+
+        findViewById(R.id.loginButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToLoginPage();
             }
         });
 
-        // Set up login text click listener
-        loginTextView.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.signupButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(signup.this, "Login clicked", Toast.LENGTH_SHORT).show();
-                // Add your login logic here
+                validateAndSignUp(appwrite);
             }
         });
+    }
 
-        // Set up signup text click listener
-        signupTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(signup.this, "Sign Up clicked", Toast.LENGTH_SHORT).show();
-                // Add your sign-up logic here
-            }
-        });
+    private void validateAndSignUp(Appwrite appwrite) {
+        String username = usernameBox.getText().toString().trim();
+        String email = emailBox.getText().toString().trim();
+        String password = passwordBox.getText().toString();
+        String confirmPassword = confirmPasswordBox.getText().toString();
 
-        // Set up tab click listeners
-        signupTab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(signup.this, "Switched to Sign Up Tab", Toast.LENGTH_SHORT).show();
-                // Add logic for switching to sign-up tab
-            }
-        });
+        // Validate fields
+        if (TextUtils.isEmpty(username)) {
+            showToast("Username cannot be empty");
+            return;
+        }
 
-        loginTab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(signup.this, "Switched to Login Tab", Toast.LENGTH_SHORT).show();
-                // Add logic for switching to login tab
+        if (TextUtils.isEmpty(email)) {
+            showToast("Email cannot be empty");
+            return;
+        }
+
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            showToast("Invalid email format");
+            return;
+        }
+
+        if (TextUtils.isEmpty(password)) {
+            showToast("Password cannot be empty");
+            return;
+        }
+
+        if (password.length() < 8) {
+            showToast("Password must be at least 8 characters");
+            return;
+        }
+
+        if (!password.equals(confirmPassword)) {
+            showToast("Passwords do not match");
+            return;
+        }
+        Signup(appwrite, username, email,password);
+    }
+
+    private void Signup(Appwrite appwrite, String username, String email, String password){
+        Runnable networkTask = () -> {
+            AppwriteResponse<Boolean> response = appwrite.auth.createAccount(email, password, username);
+
+            if (response instanceof AppwriteResponse.Success) {
+                Log.d("Expo_Logs", "Account created successfully!");
+                showToast("Account created successfully!");
+                clearFields();
+            } else if (response instanceof AppwriteResponse.Error) {
+                AppwriteResponse.Error<Boolean> errorResponse = (AppwriteResponse.Error<Boolean>) response;
+                Log.d("Expo_Logs", errorResponse.getCode() + " : " + errorResponse.getMessage());
             }
-        });
+        };
+
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        executorService.submit(networkTask);
+        executorService.shutdown();
+
+    }
+
+    private void goToLoginPage(){
+        Intent myIntent = new Intent(this, MainActivity.class);
+        this.startActivity(myIntent);
+    }
+
+    private void goToHomePage(){
+        Intent myIntent = new Intent(this, frontpage.class);
+        this.startActivity(myIntent);
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(signup.this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void clearFields(){
+        usernameBox.setText("");
+        emailBox.setText("");
+        passwordBox.setText("");
+        confirmPasswordBox.setText("");
     }
 }
