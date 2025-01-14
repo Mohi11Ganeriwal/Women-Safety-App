@@ -64,48 +64,34 @@
         android:id="@+id/mobile_number_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="175dp"
-        android:text="Mobile number"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="110dp"
+        android:text="Make them your SOS contact"
         android:textColor="#000000"
-        android:textSize="24sp" />
+        android:textSize="20sp" />
 
     <!-- Enter Number Box -->
+
+
     <RelativeLayout
         android:id="@+id/enter_number_box"
-        android:layout_width="330dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="220dp"
+        android:layout_width="340dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="180dp"
         android:background="@drawable/box_background"
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/enter_number_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enter number"
+            android:layout_width="175dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="-5dp"
+            android:text="Type the Name"
             android:textColor="#000000"
-            android:textSize="24sp" />
-    </RelativeLayout>
+            android:textSize="14sp">
 
-    <!-- Add Friends Button -->
-    <RelativeLayout
-        android:id="@+id/add_friends_button"
-        android:layout_width="342dp"
-        android:layout_height="65dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="316dp"
-        android:background="@drawable/button_background">
-
-        <TextView
-            android:id="@+id/add_friends_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Add friends"
-            android:textColor="#000000"
-            android:textSize="24sp" />
+        </TextView>
     </RelativeLayout>
 
     <View
