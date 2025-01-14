@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.expo.appwrite.Appwrite;
 import com.example.expo.appwrite.AppwriteResponse;
+import com.example.expo.util.SharedPrefsUtil;
 
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
@@ -87,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
             AppwriteResponse<Boolean> response = appwrite.auth.login(username, password);
             if (response instanceof AppwriteResponse.Success) {
                 Log.d("Expo_Logs", "Account get successful");
+                SharedPrefsUtil.setLoggedIn(MainActivity.this, true);
                 goToHomePage();
             } else if (response instanceof AppwriteResponse.Error) {
                 AppwriteResponse.Error<Boolean> errorResponse = (AppwriteResponse.Error<Boolean>) response;

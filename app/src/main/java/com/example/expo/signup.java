@@ -40,10 +40,6 @@ public class signup extends AppCompatActivity {
         passwordBox = findViewById(R.id.passwordBox);
         confirmPasswordBox = findViewById(R.id.ConfirmpasswordBox);
 
-        if (SharedPrefsUtil.isLoggedIn(this)) {
-            startLoadingScreen();
-        }
-
         findViewById(R.id.loginButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,11 +100,17 @@ public class signup extends AppCompatActivity {
 
             if (response instanceof AppwriteResponse.Success) {
                 Log.d("Expo_Logs", "Account created successfully!");
-                showToast("Account created successfully!");
-                clearFields();
+                runOnUiThread(() -> {
+                    Toast.makeText(signup.this, "Account created successfully!", Toast.LENGTH_LONG).show();
+                });
+                SharedPrefsUtil.setLoggedIn(signup.this, true);
+                goToLoginPage();
             } else if (response instanceof AppwriteResponse.Error) {
                 AppwriteResponse.Error<Boolean> errorResponse = (AppwriteResponse.Error<Boolean>) response;
                 Log.d("Expo_Logs", errorResponse.getCode() + " : " + errorResponse.getMessage());
+                runOnUiThread(() -> {
+                    Toast.makeText(signup.this, errorResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                });
             }
         };
 
@@ -119,18 +121,15 @@ public class signup extends AppCompatActivity {
     }
 
     private void goToLoginPage(){
-        Intent myIntent = new Intent(this, MainActivity.class);
+        Intent myIntent = new Intent(signup.this, MainActivity.class);
         this.startActivity(myIntent);
+        finish();
     }
 
     private void goToHomePage(){
-        Intent myIntent = new Intent(this, frontpage.class);
+        Intent myIntent = new Intent(signup.this, frontpage.class);
         this.startActivity(myIntent);
-    }
-
-    private void startLoadingScreen(){
-        Intent myIntent = new Intent(this, LoadingActivity.class);
-        this.startActivity(myIntent);
+        finish();
     }
 
     private void showToast(String message) {

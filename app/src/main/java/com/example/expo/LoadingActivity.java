@@ -33,30 +33,41 @@ public class LoadingActivity extends AppCompatActivity {
             Runnable networkTask = () -> {
                 AppwriteResponse<User<Map<String, Object>>> response = appwrite.auth.getUser();
                 if (response instanceof AppwriteResponse.Success) {
-                    Log.d("Expo_Logs", "Account get successful");
+                    Log.d("Expo_Logs_LoadingActivity", "Account get successful");
                     goToHomePage();
                 } else if (response instanceof AppwriteResponse.Error) {
+                    SharedPrefsUtil.setLoggedIn(LoadingActivity.this, false);
                     AppwriteResponse.Error<User<Map<String, Object>>> errorResponse = (AppwriteResponse.Error<User<Map<String, Object>>>) response;
-                    Log.d("Expo_Logs", errorResponse.getCode() + " : " + errorResponse.getMessage());
-                    Toast.makeText(this, errorResponse.getMessage(), Toast.LENGTH_LONG).show();
-                    goToSignupPage();
-                } else {
-                    goToSignupPage();
+                    Log.d("Expo_Logs", "Error" + errorResponse.getCode() + " : " + errorResponse.getMessage());
+                    goToLoginPage();
                 }
             };
             ExecutorService executorService = Executors.newSingleThreadExecutor();
             executorService.submit(networkTask);
             executorService.shutdown();
+        } else {
+            goToSignupPage();
         }
     }
 
     private void goToHomePage(){
+        Log.d("Expo_Logs", "LoadingActivity: goToHomePage");
         Intent myIntent = new Intent(this, frontpage.class);
         this.startActivity(myIntent);
+        finish();
     }
 
     private void goToSignupPage(){
+        Log.d("Expo_Logs", "LoadingActivity: GoToSignUpPage");
         Intent myIntent = new Intent(this, signup.class);
         this.startActivity(myIntent);
+        finish();
+    }
+
+    private void goToLoginPage(){
+        Log.d("Expo_Logs", "LoadingActivity: goToLoginPage");
+        Intent myIntent = new Intent(this,  MainActivity.class);
+        this.startActivity(myIntent);
+        finish();
     }
 }

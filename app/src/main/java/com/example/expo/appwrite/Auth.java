@@ -33,6 +33,10 @@ public class Auth {
                     new CoroutineCallback<>((result, error) -> {
                         if (error != null) {
                             Log.d(TAG, "createAccount: " + error);
+                            future.complete(new AppwriteResponse.Error<>(
+                                    0,
+                                    error.getMessage() != null ? error.getMessage() : "Login failed. Please check your credentials."
+                            ));
                             return;
                         }
 
@@ -59,6 +63,10 @@ public class Auth {
             account.get(new CoroutineCallback<>((result, error) -> {
                 if (error != null) {
                     Log.d(TAG, "getUser: " + error.getMessage());
+                    future.complete(new AppwriteResponse.Error<>(
+                            0,
+                            error.getMessage() != null ? error.getMessage() : "Login failed. Please check your credentials."
+                    ));
                     return;
                 }
                 future.complete(new AppwriteResponse.Success<>(result));
@@ -87,6 +95,10 @@ public class Auth {
                     new CoroutineCallback<>((result, error) -> {
                         if (error != null) {
                             Log.d(TAG, "createAccount: " + error);
+                            future.complete(new AppwriteResponse.Error<>(
+                                    0,
+                                    error.getMessage() != null ? error.getMessage() : "Login failed. Please check your credentials."
+                            ));
                             return;
                         }
 

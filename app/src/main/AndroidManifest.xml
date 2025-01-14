@@ -20,9 +20,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Expo">
         <activity
-            android:name=".LoadingActivity"
-            android:exported="false" />
-        <activity
             android:name=".helpline"
             android:exported="false" />
         <activity
@@ -90,6 +87,9 @@
             android:exported="false" />
         <activity
             android:name=".signup"
+            android:exported="false" />
+        <activity
+            android:name=".LoadingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
