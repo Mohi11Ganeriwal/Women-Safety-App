@@ -93,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
             } else if (response instanceof AppwriteResponse.Error) {
                 AppwriteResponse.Error<Boolean> errorResponse = (AppwriteResponse.Error<Boolean>) response;
                 Log.d("Expo_Logs", errorResponse.getCode() + " : " + errorResponse.getMessage());
+                runOnUiThread(() -> {
+                    Toast.makeText(MainActivity.this, errorResponse.getMessage(), Toast.LENGTH_LONG).show();
+                });
             }
         };
         ExecutorService executorService = Executors.newSingleThreadExecutor();
