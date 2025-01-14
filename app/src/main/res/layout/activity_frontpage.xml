@@ -203,17 +203,22 @@
         android:clipToPadding="true"
         android:elevation="4dp">
 
-        <Button
-            android:id="@+id/view_map_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="View Map"
-            android:textSize="16sp"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="10dp"
-            android:backgroundTint="#FFD230"
-            android:background="@drawable/rounded_box_18dp"
-            android:textColor="#000" />
+<!--        <Button-->
+<!--            android:id="@+id/view_map_button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="View Map"-->
+<!--            android:textSize="16sp"-->
+<!--            android:layout_gravity="bottom|end"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:backgroundTint="#FFD230"-->
+<!--            android:background="@drawable/rounded_box_18dp"-->
+<!--            android:textColor="#000" />-->
+
+        <WebView
+            android:id="@+id/mapWebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </FrameLayout>
 
     <!-- Bottom Actions -->

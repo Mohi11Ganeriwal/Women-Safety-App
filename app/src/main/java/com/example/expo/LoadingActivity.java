@@ -40,6 +40,8 @@ public class LoadingActivity extends AppCompatActivity {
                     Log.d("Expo_Logs", errorResponse.getCode() + " : " + errorResponse.getMessage());
                     Toast.makeText(this, errorResponse.getMessage(), Toast.LENGTH_LONG).show();
                     goToSignupPage();
+                } else {
+                    goToSignupPage();
                 }
             };
             ExecutorService executorService = Executors.newSingleThreadExecutor();
