@@ -31,7 +31,9 @@ public class signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
         Appwrite appwrite = Appwrite.getInstance(this);
+
         // Initialize UI components
         usernameBox = findViewById(R.id.usernameBox);
         emailBox = findViewById(R.id.EmailBox);
@@ -39,20 +41,7 @@ public class signup extends AppCompatActivity {
         confirmPasswordBox = findViewById(R.id.ConfirmpasswordBox);
 
         if (SharedPrefsUtil.isLoggedIn(this)) {
-
-            Runnable networkTask = () -> {
-                AppwriteResponse<User<Map<String, Object>>> response = appwrite.auth.getUser();
-                if (response instanceof AppwriteResponse.Success) {
-                    Log.d("Expo_Logs", "Account get successful");
-                    goToHomePage();
-                } else if (response instanceof AppwriteResponse.Error) {
-                    AppwriteResponse.Error<User<Map<String, Object>>> errorResponse = (AppwriteResponse.Error<User<Map<String, Object>>>) response;
-                    Log.d("Expo_Logs", errorResponse.getCode() + " : " + errorResponse.getMessage());
-                }
-            };
-            ExecutorService executorService = Executors.newSingleThreadExecutor();
-            executorService.submit(networkTask);
-            executorService.shutdown();
+            startLoadingScreen();
         }
 
         findViewById(R.id.loginButton).setOnClickListener(new View.OnClickListener() {
@@ -136,6 +125,11 @@ public class signup extends AppCompatActivity {
 
     private void goToHomePage(){
         Intent myIntent = new Intent(this, frontpage.class);
+        this.startActivity(myIntent);
+    }
+
+    private void startLoadingScreen(){
+        Intent myIntent = new Intent(this, LoadingActivity.class);
         this.startActivity(myIntent);
     }
 
