@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFD230">
+
+    <ImageView
+        android:id="@+id/arrow_icon"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/circle_white"
+        android:src="@drawable/arrow_icon" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="100dp"
+        android:text="Name"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="67dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="25dp"
+        android:text="Chats"
+        android:textColor="#000000"
+        android:textSize="24sp"/>
+    <RelativeLayout
+        android:id="@+id/chat"
+        android:layout_width="342dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/button_background">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="20dp"
+
+            android:background="@drawable/ic_girl_icon"/>
+        <TextView
+            android:id="@+id/name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="80dp"
+            android:text="Name"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="69dp"
+            android:layout_height="19dp"
+            android:text="Message"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="80dp"/>
+
+        <TextView
+            android:layout_width="38dp"
+            android:layout_height="19dp"
+            android:text="Time"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="280dp"
+            android:textColor="#000000"
+            android:textSize="16dp"/>
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+</RelativeLayout>

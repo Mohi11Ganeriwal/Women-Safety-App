@@ -82,6 +82,13 @@
         android:background="@drawable/box_background"
         android:padding="16dp">
 
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="75dp"
+            android:background="@drawable/search"
+            android:layout_gravity="center_vertical">
+        </ImageView>
+
         <TextView
             android:layout_width="175dp"
             android:layout_height="20dp"
