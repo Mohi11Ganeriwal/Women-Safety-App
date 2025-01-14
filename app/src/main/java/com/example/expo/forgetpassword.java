@@ -1,6 +1,7 @@
 package com.example.expo;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,16 +11,19 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class forgetpassword extends AppCompatActivity {
+    Button resetPasswordButton;
+    ImageView arrow;
+    EditText emailInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_forgetpassword);
 
         // Initialize views
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) EditText emailInput = findViewById(R.id.email_input);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button resetPasswordButton = findViewById(R.id.reset_password_button);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView arrow = findViewById(R.id.arrow);
+        emailInput = findViewById(R.id.email_input);
+        resetPasswordButton = findViewById(R.id.reset_password_button);
+        arrow = findViewById(R.id.arrow_icon);
 
         // Set onClick listener for Reset Password button
         resetPasswordButton.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +35,7 @@ public class forgetpassword extends AppCompatActivity {
                 } else {
                     // Simulate password reset functionality
                     Toast.makeText(forgetpassword.this, "Password reset link sent to " + email, Toast.LENGTH_SHORT).show();
+                    goToCheckEmailScreen();
                 }
             }
         });
@@ -42,5 +47,10 @@ public class forgetpassword extends AppCompatActivity {
                 finish(); // Navigate back to the previous screen
             }
         });
+    }
+
+    private void goToCheckEmailScreen(){
+        Intent myIntent = new Intent(this, checkyouremail.class);
+        this.startActivity(myIntent);
     }
 }

@@ -25,7 +25,7 @@ import io.appwrite.models.User;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView signupBtn;
+    private TextView signupBtn, forgotPass;
     private EditText usernameBox, passwordBox;
 
     private Button loginBtn;
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         usernameBox = findViewById(R.id.usernameBox);
         passwordBox = findViewById(R.id.passwordBox);
         loginBtn = findViewById(R.id.loginButton);
+        forgotPass = findViewById(R.id.forgotPassword);
         Appwrite appwrite = Appwrite.getInstance(this);
 
         findViewById(R.id.signup).setOnClickListener(new View.OnClickListener() {
@@ -53,10 +54,23 @@ public class MainActivity extends AppCompatActivity {
                 validateAndLogin(appwrite);
             }
         });
+
+        findViewById(R.id.forgotPassword).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToForgotPassword();
+            }
+        });
     }
 
     private void goToSignupPage(){
         Intent myIntent = new Intent(this, signup.class);
+        this.startActivity(myIntent);
+        finish();
+    }
+
+    private void goToForgotPassword(){
+        Intent myIntent = new Intent(this, forgetpassword.class);
         this.startActivity(myIntent);
     }
 
@@ -87,9 +101,9 @@ public class MainActivity extends AppCompatActivity {
         Runnable networkTask = () -> {
             AppwriteResponse<Boolean> response = appwrite.auth.login(username, password);
             if (response instanceof AppwriteResponse.Success) {
-                Log.d("Expo_Logs", "Account get successful");
+                Log.d("Expo_Logs", "Account login successful");
                 SharedPrefsUtil.setLoggedIn(MainActivity.this, true);
-                goToHomePage();
+                tryGetUser(appwrite);
             } else if (response instanceof AppwriteResponse.Error) {
                 AppwriteResponse.Error<Boolean> errorResponse = (AppwriteResponse.Error<Boolean>) response;
                 Log.d("Expo_Logs", errorResponse.getCode() + " : " + errorResponse.getMessage());
@@ -102,6 +116,23 @@ public class MainActivity extends AppCompatActivity {
         executorService.submit(networkTask);
         executorService.shutdown();
 
+    }
+
+    private void tryGetUser(Appwrite appwrite){
+        Runnable networkTask = () -> {
+            AppwriteResponse<User<Map<String, Object>>> response = appwrite.auth.getUser();
+            if (response instanceof AppwriteResponse.Success) {
+                Log.d("Expo_Logs_LoadingActivity", "Account get successful");
+                goToHomePage();
+            } else if (response instanceof AppwriteResponse.Error) {
+                SharedPrefsUtil.setLoggedIn(MainActivity.this, false);
+                AppwriteResponse.Error<User<Map<String, Object>>> errorResponse = (AppwriteResponse.Error<User<Map<String, Object>>>) response;
+                Log.d("Expo_Logs", "Error" + errorResponse.getCode() + " : " + errorResponse.getMessage());
+            }
+        };
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        executorService.submit(networkTask);
+        executorService.shutdown();
     }
 
     private void goToHomePage(){

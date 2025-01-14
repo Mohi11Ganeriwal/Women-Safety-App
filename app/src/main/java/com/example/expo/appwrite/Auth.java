@@ -67,6 +67,7 @@ public class Auth {
                             0,
                             error.getMessage() != null ? error.getMessage() : "Login failed. Please check your credentials."
                     ));
+                    currentUser = result;
                     return;
                 }
                 future.complete(new AppwriteResponse.Success<>(result));
@@ -87,7 +88,7 @@ public class Auth {
 
     public AppwriteResponse<Boolean> login(String email, String password){
         CompletableFuture<AppwriteResponse<Boolean>> future = new CompletableFuture<>();
-
+        logout();
         try {
             account.createEmailPasswordSession(
                     email,
@@ -111,6 +112,19 @@ public class Auth {
                     0,
                     "Something went wrong during login."
             );
+        }
+    }
+
+    public void logout(){
+        try {
+            account.deleteSession("current", new CoroutineCallback<>((result, error) -> {
+                if (error != null) {
+                    Log.d(TAG, "logout: " + error.getMessage());
+                    return;
+                }
+            }));
+        } catch (Exception e){
+            Log.d(TAG, "logout: " + e.toString());
         }
     }
 
