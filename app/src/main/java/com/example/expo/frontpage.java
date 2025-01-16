@@ -21,7 +21,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class frontpage extends AppCompatActivity {
-    private ImageView helpline;
+    private ImageView helpline, trackme, record, messages;
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 100;
 
@@ -40,6 +40,34 @@ public class frontpage extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.trackme_icon).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToTrackMe();
+            }
+        });
+
+        findViewById(R.id.profile_icon).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToProfile();
+            }
+        });
+
+        findViewById(R.id.record_icon).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToRecord();
+            }
+        });
+
+        findViewById(R.id.messages_icon).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToMessages();
+            }
+        });
+
         WebView mapWebView = findViewById(R.id.mapWebView);
 
         WebSettings webSettings = mapWebView.getSettings();
@@ -53,6 +81,26 @@ public class frontpage extends AppCompatActivity {
 
     private void goToHelpline(){
         Intent myIntent = new Intent(this, helpline.class);
+        this.startActivity(myIntent);
+    }
+
+    private void goToTrackMe(){
+        Intent myIntent = new Intent(this, Trackme.class);
+        this.startActivity(myIntent);
+    }
+
+    private void goToRecord(){
+        Intent myIntent = new Intent(this, record.class);
+        this.startActivity(myIntent);
+    }
+
+    private void goToMessages(){
+        Intent myIntent = new Intent(this, messages.class);
+        this.startActivity(myIntent);
+    }
+
+    private void goToProfile(){
+        Intent myIntent = new Intent(this, profile.class);
         this.startActivity(myIntent);
     }
 
