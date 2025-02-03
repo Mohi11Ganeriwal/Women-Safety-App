@@ -22,6 +22,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class frontpage extends AppCompatActivity {
     private ImageView helpline, trackme, record, messages;
+    private Button friendsBtn;
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 100;
 
@@ -68,6 +69,13 @@ public class frontpage extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.add_friend_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToAddFriends();
+            }
+        });
+
         WebView mapWebView = findViewById(R.id.mapWebView);
 
         WebSettings webSettings = mapWebView.getSettings();
@@ -101,6 +109,11 @@ public class frontpage extends AppCompatActivity {
 
     private void goToProfile(){
         Intent myIntent = new Intent(this, profile.class);
+        this.startActivity(myIntent);
+    }
+
+    private void goToAddFriends(){
+        Intent myIntent = new Intent(this, friends.class);
         this.startActivity(myIntent);
     }
 

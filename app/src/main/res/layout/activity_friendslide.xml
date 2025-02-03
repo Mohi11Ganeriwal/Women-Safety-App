@@ -3,7 +3,6 @@
     android:layout_height="match_parent"
     android:background="#FFD230">
 
-    <!-- Circle at top-left -->
     <View
         android:id="@+id/circle_top_left"
         android:layout_width="78dp"
@@ -12,7 +11,6 @@
         android:layout_marginTop="29dp"
         android:background="@drawable/circle_white" />
 
-    <!-- Arrow -->
     <View
         android:id="@+id/arrow"
         android:layout_width="38dp"
@@ -21,7 +19,6 @@
         android:layout_marginTop="33dp"
         android:background="@drawable/arrow_black" />
 
-    <!-- Large yellow circle on top-left -->
     <View
         android:id="@+id/large_circle_back"
         android:layout_width="147dp"
@@ -30,7 +27,6 @@
         android:layout_marginTop="-40dp"
         android:background="@drawable/circle_large_yellow" />
 
-    <!-- Large light yellow circle on top-left -->
     <View
         android:id="@+id/large_circle_front"
         android:layout_width="156dp"
@@ -59,55 +55,30 @@
         android:textSize="40sp"
         android:textStyle="bold" />
 
-    <!-- Mobile Number Label -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/friends_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"  android:layout_marginLeft="20dp" android:layout_marginRight="20dp"  />
+
     <TextView
-        android:id="@+id/mobile_number_label"
+        android:id="@+id/no_friends_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="110dp"
-        android:layout_marginTop="110dp"
-        android:text="Make them your SOS contact"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="100dp"
+        android:text="No friends added yet."
         android:textColor="#000000"
-        android:textSize="20sp" />
-
-    <!-- Enter Number Box -->
-
-
-    <RelativeLayout
-        android:id="@+id/enter_number_box"
-        android:layout_width="340dp"
-        android:layout_height="45dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="180dp"
-        android:background="@drawable/box_background"
-        android:padding="16dp">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="75dp"
-            android:background="@drawable/search"
-            android:layout_gravity="center_vertical">
-        </ImageView>
-
-        <TextView
-            android:layout_width="175dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="-5dp"
-            android:text="Type the Name"
-            android:textColor="#000000"
-            android:textSize="14sp">
-
-        </TextView>
-    </RelativeLayout>
+        android:textSize="16sp"
+        android:visibility="gone" />
 
     <View
         android:id="@+id/bottom_right_circle_light_yellow"
         android:layout_width="142dp"
         android:layout_height="140dp"
         android:layout_marginStart="300dp"
-        android:layout_marginLeft="220dp"
         android:layout_marginTop="620dp"
-        android:layout_marginBottom="-100dp"
         android:background="@drawable/circle_large_light_yellow" />
+
 </RelativeLayout>
