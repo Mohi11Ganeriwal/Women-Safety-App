@@ -1,9 +1,11 @@
 package com.example.expo;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
@@ -27,6 +29,8 @@ public class Trackme extends AppCompatActivity implements OnMapReadyCallback {
     private ImageView back;
     private FusedLocationProviderClient fusedLocationClient;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 100;
+    double latitude = 0.0, longitude = 0.0; // Default values
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,13 @@ public class Trackme extends AppCompatActivity implements OnMapReadyCallback {
         }
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        findViewById(R.id.send_friends_button).setOnClickListener(v -> {
+            Intent intent = new Intent(Trackme.this, friendslide.class);
+            intent.putExtra("latitude", latitude);
+            intent.putExtra("longitude", longitude);
+            startActivity(intent);
+        });
     }
 
     @Override
@@ -67,6 +78,10 @@ public class Trackme extends AppCompatActivity implements OnMapReadyCallback {
                     LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
                     mMap.addMarker(new MarkerOptions().position(userLocation).title("You are here"));
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 15));
+                    Log.d("FriendAdapterTrackMe", userLocation.latitude + " : " + userLocation.longitude);
+
+                    latitude = userLocation.latitude;
+                    longitude = userLocation.longitude;
                 }
             }
         });

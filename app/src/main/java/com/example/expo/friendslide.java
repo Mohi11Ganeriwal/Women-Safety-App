@@ -28,6 +28,9 @@ public class friendslide extends AppCompatActivity {
     private TextView noFriendsMessage;
     private FriendAdapter friendAdapter;
     private FriendManager friendManager;
+    double latitude = 0.0;
+    double longitude = 0.0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +38,17 @@ public class friendslide extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_friendslide);
 
+        latitude = getIntent().getDoubleExtra("latitude", 0.0);
+        longitude = getIntent().getDoubleExtra("longitude", 0.0);
+
+
         friendsRecyclerView = findViewById(R.id.friends_recycler_view);
         noFriendsMessage = findViewById(R.id.no_friends_message);
 
-        friendManager = new FriendManager(this); // Initialize FriendManager
+        friendManager = new FriendManager(this);
 
-        // Set up RecyclerView
         friendsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        friendAdapter = new FriendAdapter(friendManager.getFriends(), friendslide.this); // Get friends from FriendManager
+        friendAdapter = new FriendAdapter(friendManager.getFriends(), friendslide.this, latitude, longitude);
         friendsRecyclerView.setAdapter(friendAdapter);
 
         updateFriendListVisibility();

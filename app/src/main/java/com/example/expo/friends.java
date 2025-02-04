@@ -40,6 +40,8 @@ public class friends extends AppCompatActivity {
                 addFriend();
             }
         });
+
+
     }
 
     private void addFriend() {
