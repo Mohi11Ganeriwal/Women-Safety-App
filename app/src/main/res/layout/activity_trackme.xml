@@ -45,16 +45,17 @@
         android:id="@+id/tracker_text" />
 
     <!-- Real-time Map -->
-    <FrameLayout
+    <fragment
         android:layout_width="405dp"
         android:layout_height="815dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="74dp"
         android:background="#FF7777"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:id="@+id/map_container">
 
         <!-- This container will hold the Google Map -->
-    </FrameLayout>
+    </fragment>
 
     <!-- Send Friends Button -->
     <RelativeLayout

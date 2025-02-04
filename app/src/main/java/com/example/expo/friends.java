@@ -20,7 +20,7 @@ import com.google.android.material.button.MaterialButton;
 public class friends extends AppCompatActivity {
 
     private EditText enterNumberText;
-    private FriendManager friendManager; // Instance of our FriendManager class
+    private FriendManager friendManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +28,11 @@ public class friends extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_friends);
 
-        enterNumberText = findViewById(R.id.enter_number_text); // Initialize EditText
-        RelativeLayout addFriendsButton = findViewById(R.id.add_friends_button); // Use MaterialButton
+        enterNumberText = findViewById(R.id.enter_number_text);
+        RelativeLayout addFriendsButton = findViewById(R.id.add_friends_button);
 
 
-        friendManager = new FriendManager(this); // Initialize FriendManager with context
+        friendManager = new FriendManager(this);
 
         addFriendsButton.setOnClickListener(new View.OnClickListener() {
             @Override

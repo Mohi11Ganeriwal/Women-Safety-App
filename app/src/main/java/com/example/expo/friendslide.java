@@ -42,7 +42,7 @@ public class friendslide extends AppCompatActivity {
 
         // Set up RecyclerView
         friendsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        friendAdapter = new FriendAdapter(friendManager.getFriends()); // Get friends from FriendManager
+        friendAdapter = new FriendAdapter(friendManager.getFriends(), friendslide.this); // Get friends from FriendManager
         friendsRecyclerView.setAdapter(friendAdapter);
 
         updateFriendListVisibility();

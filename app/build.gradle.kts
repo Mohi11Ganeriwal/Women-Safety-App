@@ -50,5 +50,7 @@ dependencies {
 
     implementation("com.google.android.material:material:1.13.0-alpha09")
     implementation("io.appwrite:sdk-for-android:6.0.0")
-
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
 }
