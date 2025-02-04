@@ -5,7 +5,6 @@
     android:background="#FFD230"
     android:orientation="vertical">
 
-    <!-- Top Bar -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -72,15 +71,11 @@
         android:textSize="15sp"
         android:textColor="#000" />
 
-    <!-- Separator Line -->
     <View
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:background="#FFFFFF"
         android:layout_marginTop="10dp" />
-
-
-    <!-- Action Icons -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -88,7 +83,6 @@
         android:orientation="horizontal"
         android:padding="16dp">
 
-        <!-- Helpline -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="100dp"
@@ -221,7 +215,6 @@
             android:layout_height="match_parent" />
     </FrameLayout>
 
-    <!-- Bottom Actions -->
     <View
         android:layout_width="match_parent"
         android:layout_height="10dp"
@@ -235,7 +228,6 @@
         android:layout_marginTop="10dp"
         android:padding="16dp">
 
-        <!-- Railway -->
         <LinearLayout
             android:layout_width="10dp"
             android:layout_height="wrap_content"

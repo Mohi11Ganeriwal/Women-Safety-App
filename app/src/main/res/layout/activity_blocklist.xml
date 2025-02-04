@@ -3,7 +3,6 @@
     android:layout_height="match_parent"
     android:background="#FFD230">
 
-    <!-- Circle at top-left -->
     <View
         android:id="@+id/circle_top_left"
         android:layout_width="78dp"
@@ -12,7 +11,6 @@
         android:layout_marginTop="29dp"
         android:background="@drawable/circle_white" />
 
-    <!-- Arrow -->
     <View
         android:id="@+id/arrow"
         android:layout_width="38dp"
@@ -21,7 +19,6 @@
         android:layout_marginTop="33dp"
         android:background="@drawable/arrow_black" />
 
-    <!-- Large yellow circle on top-left -->
     <View
         android:id="@+id/large_circle_back"
         android:layout_width="147dp"
@@ -30,7 +27,6 @@
         android:layout_marginTop="-40dp"
         android:background="@drawable/circle_large_yellow" />
 
-    <!-- Large light yellow circle on top-left -->
     <View
         android:id="@+id/large_circle_front"
         android:layout_width="156dp"
@@ -58,8 +54,6 @@
         android:textColor="#000000"
         android:textSize="32sp"
         android:textStyle="bold" />
-
-
 
     <View
         android:id="@+id/bottom_right_circle_light_yellow"

@@ -5,24 +5,20 @@
     android:viewportWidth="100"
     android:viewportHeight="100">
 
-    <!-- Outer Circle -->
     <path
         android:fillColor="#FFFFFF"
         android:pathData="M50,2C24.561,2 2,24.561 2,50C2,75.439 24.561,98 50,98C75.439,98 98,75.439 98,50C98,24.561 75.439,2 50,2z"
         android:strokeColor="#FFD230"
         android:strokeWidth="4" />
 
-    <!-- Inner Circle -->
     <path
         android:fillColor="#FFD230"
         android:pathData="M50,8C29.083,8 8,29.083 8,50C8,70.917 29.083,92 50,92C70.917,92 92,70.917 92,50C92,29.083 70.917,8 50,8z" />
 
-    <!-- Silhouette Head -->
     <path
         android:fillColor="#FFFFFF"
         android:pathData="M50,30C45.029,30 41,34.029 41,39C41,43.971 45.029,48 50,48C54.971,48 59,43.971 59,39C59,34.029 54.971,30 50,30z" />
 
-    <!-- Silhouette Shoulders -->
     <path
         android:fillColor="#FFFFFF"
         android:pathData="M35,66C35,58.268 41.268,52 49,52H51C58.732,52 65,58.268 65,66V70H35V66z" />

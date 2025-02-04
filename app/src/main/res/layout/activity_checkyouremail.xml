@@ -55,7 +55,6 @@
         android:layout_marginTop="35dp"
         android:orientation="horizontal">
 
-        <!-- Box 1 -->
         <View
             android:layout_width="45dp"
             android:layout_height="43dp"
@@ -63,7 +62,6 @@
             android:background="#FFFFE4"
             android:backgroundTint="@drawable/rounded_corner" />
 
-        <!-- Box 2 -->
         <View
             android:layout_width="45dp"
             android:layout_height="43dp"
@@ -71,9 +69,6 @@
             android:background="#FFFFE4"
             android:backgroundTint="@drawable/rounded_corner" />
 
-        <!-- Box 3 -->
-
-        <!-- Box 4 -->
         <View
             android:layout_width="45dp"
             android:layout_height="43dp"
