@@ -1,7 +1,9 @@
 package com.example.expo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -22,6 +24,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class frontpage extends AppCompatActivity {
     private ImageView helpline, trackme, record, messages;
+    private Button friendsBtn;
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 100;
 
@@ -68,12 +71,25 @@ public class frontpage extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.sos_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dial112();
+            }
+        });
+
+        findViewById(R.id.add_friend_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToAddFriends();
+            }
+        });
+
         WebView mapWebView = findViewById(R.id.mapWebView);
 
         WebSettings webSettings = mapWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        // Load the map URL (e.g., Google Maps or OpenStreetMap)
         String mapUrl = "https://www.google.com/maps";
         mapWebView.setWebViewClient(new WebViewClient());
         mapWebView.loadUrl(mapUrl);
@@ -104,18 +120,27 @@ public class frontpage extends AppCompatActivity {
         this.startActivity(myIntent);
     }
 
+    private void goToAddFriends(){
+        Intent myIntent = new Intent(this, friends.class);
+        this.startActivity(myIntent);
+    }
+
+    public void dial112() {
+        Context context = frontpage.this;
+        Uri phoneUri = Uri.parse("tel:112");
+        Intent surf = new Intent(Intent.ACTION_DIAL, phoneUri);
+        startActivity(surf);
+    }
+
     private void requestLocationPermission() {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
-
-            // Request the permission
             ActivityCompat.requestPermissions(
                     this,
                     new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
                     LOCATION_PERMISSION_REQUEST_CODE
             );
         } else {
-            // Permission already granted
             Toast.makeText(this, "Location permission already granted", Toast.LENGTH_SHORT).show();
         }
     }
@@ -126,10 +151,8 @@ public class frontpage extends AppCompatActivity {
 
         if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission granted
                 Toast.makeText(this, "Location permission granted", Toast.LENGTH_SHORT).show();
             } else {
-                // Permission denied
                 Toast.makeText(this, "Location permission denied", Toast.LENGTH_SHORT).show();
             }
         }
