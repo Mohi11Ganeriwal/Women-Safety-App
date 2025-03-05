@@ -22,4 +22,5 @@
     <item name="trackme_icon" type="id" />
     <item name="record_text" type="id" />
     <item name="record_icon" type="id" />
+    <item name="friends_recycler_view" type="id" />
 </resources>

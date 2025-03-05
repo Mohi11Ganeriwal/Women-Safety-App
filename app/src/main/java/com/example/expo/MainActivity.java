@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView signupBtn, forgotPass;
     private EditText usernameBox, passwordBox;
-
     private Button loginBtn;
 
     @Override

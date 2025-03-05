@@ -42,7 +42,7 @@
 
     <Button
         android:id="@+id/add_friend_button"
-        android:layout_width="144dp"
+        android:layout_width="162dp"
         android:layout_height="48dp"
         android:layout_gravity="right"
         android:layout_marginTop="0dp"
@@ -230,66 +230,26 @@
 
         <LinearLayout
             android:layout_width="10dp"
-            android:layout_height="wrap_content"
+            android:layout_height="105dp"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/railway_icon"
-                android:layout_width="60dp"
-                android:layout_height="62dp"
-                android:backgroundTint="#FFD230"
-                android:layout_gravity="start|left"
-                android:layout_marginTop="-7dp"
-                android:layout_marginStart="45dp"
-                android:src="@drawable/ic_railway" />
-            <TextView
-                android:id="@+id/railway_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-10dp"
-                android:layout_marginStart="48dp"
-                android:layout_gravity="left|start"
-                android:text="Railway"
-                android:textColor="#000"
-                android:textSize="15sp" />
 
             <Button
                 android:id="@+id/sos_button"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="78dp"
+                android:layout_height="67dp"
                 android:layout_gravity="center"
-                android:backgroundTint="#FF0000"
-                android:layout_marginTop="-64dp"
+                android:layout_marginTop="-38dp"
                 android:background="@drawable/rounded_button"
+                android:backgroundTint="#FF0000"
                 android:shadowRadius="@android:integer/status_bar_notification_info_maxnum"
                 android:text="SOS"
                 android:textColor="#FFF"
-                android:textSize="16sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/cabbooking_icon"
-                android:layout_width="60dp"
-                android:layout_height="62dp"
-                android:layout_gravity="start|left"
-                android:layout_marginStart="265dp"
-                android:layout_marginTop="-65dp"
-                android:background="@drawable/circle_back"
-                android:backgroundTint="#FFD230"
-                android:src="@drawable/baseline_car_repair_24" />
-
-            <TextView
-                android:id="@+id/cabbooking_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-12dp"
-                android:layout_marginStart="258dp"
-                android:layout_gravity="left|start"
-                android:text="Cab Booking"
-                android:textColor="#000"
-                android:textSize="15sp" />
         </LinearLayout>
 
     </LinearLayout>
