@@ -2,11 +2,17 @@ package com.example.expo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.expo.appwrite.Appwrite;
+
 import io.appwrite.Client;
+import io.appwrite.ID;
+import io.appwrite.coroutines.CoroutineCallback;
 import io.appwrite.services.Storage;
 import io.appwrite.exceptions.AppwriteException;
 import io.appwrite.models.InputFile;
@@ -25,11 +31,7 @@ public class file_paths extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Initialize Appwrite Client
-        client = new Client()
-                .setEndpoint("https://cloud.appwrite.io/v1") // Replace with your Appwrite endpoint
-                .setProject("YOUR_PROJECT_ID") // Replace with your Appwrite Project ID
-                .setKey("YOUR_API_KEY") // Replace with your Appwrite API Key
-                .setSelfSigned(true); // Required for self-hosted Appwrite
+        client = Appwrite.getInstance(this).client;
 
         storage = new Storage(client);
 
@@ -63,17 +65,21 @@ public class file_paths extends AppCompatActivity {
 
         ExecutorService executor = Executors.newSingleThreadExecutor();
         executor.execute(() -> {
-            try {
-                storage.createFile(
-                        "your_bucket_id", // Replace with your Appwrite bucket ID
-                        "unique()", // Unique ID for the file
-                        InputFile.fromFile(file)
-                );
-                runOnUiThread(() -> Toast.makeText(file_paths.this, "File uploaded successfully!", Toast.LENGTH_SHORT).show());
-            } catch (AppwriteException e) {
-                e.printStackTrace();
-                runOnUiThread(() -> Toast.makeText(file_paths.this, "Upload failed: " + e.getMessage(), Toast.LENGTH_SHORT).show());
-            }
+            storage.createFile(
+                    "67c83241003487ab1680",
+                    ID.Companion.unique(16),
+                    InputFile.Companion.fromFile(file),
+                    new CoroutineCallback<>((result, error) -> {
+                        if (error != null) {
+                            error.printStackTrace();
+                            return;
+                        }
+
+                        Log.d("Appwrite", result.toString());
+                    })
+            );
+
+            runOnUiThread(() -> Toast.makeText(file_paths.this, "File uploaded successfully!", Toast.LENGTH_SHORT).show());
         });
     }
 }

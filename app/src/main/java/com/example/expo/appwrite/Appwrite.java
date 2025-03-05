@@ -8,7 +8,7 @@ public class Appwrite {
     private static Appwrite single_instance = null;
     private Context globalContext;
     public Auth auth;
-    private Client client;
+    public Client client;
 
     private Appwrite(Context mContext)
     {
